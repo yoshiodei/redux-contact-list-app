@@ -1,7 +1,5 @@
 import firebase from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
+import 'firebase/firestore';
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDxUbJl2-PfROZR8o3-1zr7s_gR4JqTDGk",
@@ -14,5 +12,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+firebase.firestore().settings({ timestampsInSnapshots: true })
 
 export default firebase;

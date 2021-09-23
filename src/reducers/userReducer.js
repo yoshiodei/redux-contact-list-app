@@ -1,4 +1,4 @@
-import { EDIT_USER, DELETE_USER, ADD_USER } from './../actions/userAction';
+import { EDIT_USER, DELETE_USER, ADD_USER, getAllusers } from './../actions/userAction';
 
 let initialState = {
     contacts : [
@@ -28,6 +28,8 @@ export const userReducer = (state = initialState, action) => {
         case DELETE_USER:
             let newList = state.contacts.filter((contact) => contact.id !== action.payload );
             return ({...state, contacts : [ ...newList ] });
+        case 'SET_ALL_USERS':
+            return {...state, contacts: action.payload};    
         default:
             return state;        
     }

@@ -16,3 +16,4 @@ export const deleteUser = (id) => {
                 payload: id
            }
 }
+
